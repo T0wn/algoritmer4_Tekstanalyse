@@ -21,12 +21,12 @@ public class Main {
             case 1:
                 try {
                     Scanner fileScanner = new Scanner(new File(args[0]));
-                    ArrayList<String> words = new ArrayList<>();
+
+                    BinarySearchTree tre = new BinarySearchTree();
                     while (fileScanner.hasNext()) {
-                        words.add(fileScanner.next());
+                        tre.insert( fileScanner.next() );
                     }
 
-                    System.out.println(words);
                 }
                 catch (FileNotFoundException e) {
                     System.out.println("Finner ikke fil");
