@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +23,9 @@ public class Main {
 
                     BinarySearchTree tre = new BinarySearchTree();
                     while (fileScanner.hasNext()) {
-                        tre.insert( fileScanner.next() );
+                        String word = fileScanner.next();
+//                        System.out.println("ord: " + word);
+                        tre.insert( word );
                     }
 
                 }

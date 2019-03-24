@@ -1,4 +1,3 @@
-import com.sun.source.tree.BinaryTree;
 
 public class BinarySearchTree {
 
@@ -16,10 +15,16 @@ public class BinarySearchTree {
         if (currentNode == null) {
             currentNode = new TreeNode(word);
             System.out.println(currentNode);
-            System.out.println(root);
         }
-        else if (word < currentNode.getWord()) {
-
+        else if ( word.compareTo( currentNode.getWord()) < 0 ){
+            currentNode.leftChild = insert(currentNode.leftChild, word);
+        }
+        else if ( word.compareTo( currentNode.getWord()) == 0 ) {
+            currentNode.increaseCounter();
+            System.out.println(currentNode);
+        }
+        else {
+            currentNode.rightChild = insert(currentNode.rightChild, word);
         }
 
         return currentNode;
