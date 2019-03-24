@@ -14,24 +14,32 @@ public class BinarySearchTree {
     private TreeNode insert(TreeNode currentNode, String word) {
         if (currentNode == null) {
             currentNode = new TreeNode(word);
-            System.out.println(currentNode);
         }
         else if ( word.compareTo( currentNode.getWord()) < 0 ){
-            currentNode.leftChild = insert(currentNode.leftChild, word);
+            currentNode.setLeftChild( insert(currentNode.getLeftChild(), word) );
         }
         else if ( word.compareTo( currentNode.getWord()) == 0 ) {
             currentNode.increaseCounter();
-            System.out.println(currentNode);
         }
         else {
-            currentNode.rightChild = insert(currentNode.rightChild, word);
+            currentNode.setRightChild( insert(currentNode.getRightChild(), word) );
         }
 
         return currentNode;
     }
 
-    public void printRoot() {
-        System.out.println(root);
+    public void printInorder() {
+        printInorder(root);
+    }
+
+    private void printInorder(TreeNode currentNode) {
+        if (currentNode == null) {
+            return;
+        }
+
+        printInorder(currentNode.getLeftChild());
+        System.out.println(currentNode);
+        printInorder(currentNode.getRightChild());
     }
 
 }

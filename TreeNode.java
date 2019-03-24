@@ -3,7 +3,7 @@ public class TreeNode {
 
     private String word;
     private int counter;
-    TreeNode leftChild, rightChild;
+    private TreeNode leftChild, rightChild;
 
     public TreeNode(String word) {
         this.word = word;
@@ -18,15 +18,26 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return "Ord: " + word + "\t counter: " + counter;
+        return counter + " forekomst(er) av ordet " + word;
     }
 
     public String getWord() {
         return word;
     }
 
-    public int getCounter() {
-        return counter;
+    public TreeNode getLeftChild() {
+        return leftChild;
     }
 
+    public void setLeftChild(TreeNode leftChild) {
+        this.leftChild = leftChild;
+    }
+
+    public TreeNode getRightChild() {
+        return rightChild;
+    }
+
+    public void setRightChild(TreeNode rightChild) {
+        this.rightChild = rightChild;
+    }
 }
